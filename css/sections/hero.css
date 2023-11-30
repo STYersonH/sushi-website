@@ -1,0 +1,257 @@
+.hero {
+  display: flex;
+  min-height: calc(100vh - 74px);
+  overflow: hidden;
+}
+
+/* HERO IMAGE */
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 5;
+}
+
+.hero-image img {
+  width: 120%;
+  height: 100%;
+  object-fit: contain; /* the image is scaled to maintain its aspect ratio while fitting within the element's content box */
+}
+
+.hero-image__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+
+  background-color: var(--primary-color);
+  z-index: -1;
+}
+
+.hero-image h2 {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+
+  font-family: var(--playfair-display);
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 138px;
+  color: #fff;
+}
+
+/* HERO CONTENT */
+/* info */
+
+.hero-content {
+  flex: 1.22;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.hero-content__info {
+  padding: 64px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content__info h1 {
+  font-family: var(--playfair-display);
+  font-size: 80px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.hero-content__info p {
+  margin: 32px 0 0 32px;
+  /*text-align: center;*/
+
+  color: var(--secondary-color);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.info__buttons {
+  margin: 41px 0 0 41px;
+
+  display: flex;
+  flex-wrap: wrap; /* if flex items are too wide to fit on one line -> move items to a new line, from top to bottom*/
+  gap: 32px;
+}
+
+.info__order-button {
+  padding: 20px;
+  border-radius: 36px;
+  min-width: 212px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+
+  outline: none;
+  border: none;
+
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+
+  transition: all 0.2s ease-out;
+}
+
+.info__order-button:hover {
+  background-color: var(--primary-color);
+}
+
+.info__play-button {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: var(--plus-jakarta-sans);
+  color: var(--black-200);
+  font-size: 16px;
+  line-height: 19px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease-out;
+}
+
+.info__play-button:hover {
+  transform: scale(1.10); /* adjust the scale factor as needed */
+}
+
+.info__play-button img {
+  width: 46px;
+  height: 46px;
+
+  object-fit: contain;
+
+  transition: all 0.2s ease-out;
+}
+
+/* testimonial */
+.hero-content__testimonial {
+  padding: 32px 64px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  background: var(--color-white);
+}
+
+.hero-content__customer {
+  flex: 1;
+  gap: 10px;
+}
+
+.hero-content__customer h4 {
+  font-family: var(--playfair-display);
+  font-size: 62px;
+  font-weight: 400;
+}
+
+.hero-content__customer p {
+  font-family: var(--plus-jakarta-sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  opacity: 0.5;
+}
+
+.hero-content__review {
+  flex: 1.5;
+  
+  gap: 15px;
+
+  border-left: 1px solid rgba(2,2,2,0.1);
+  padding-left: 30px;
+  min-width: 200px;
+}
+
+.hero-content__review img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.hero-content__review p {
+  font-family: var(--plus-jakarta-sans);
+  color: var(--secondary-color);
+  opacity: .7;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1060px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    width: 100%;
+
+    transform: matrix(1, 0.07, 0, 1.25, 0, 0) !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .hero-image h2 {
+    font-size: 70px;
+    line-height: 90px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hero-image h2 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .hero-content__info h1 {
+    font-size: 60px;
+  }
+
+  .hero-content__info p {
+    margin: 32px 0;
+  }
+
+  .info__buttons {
+    margin: 41px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-content__testimonial {
+    padding: 32px;
+
+    display: flex;
+    flex-direction: flex;
+    gap: 10px;
+  }
+
+  .hero-content__customer h4{
+    font-size: 30px;
+  }
+
+  .hero-content__customer p{
+    font-size: 12px;
+  }
+
+  .hero-content__review p {
+    font-size: 12px;
+  }
+}
+

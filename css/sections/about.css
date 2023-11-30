@@ -1,0 +1,276 @@
+.about-us {
+  display: flex;
+  min-height: 720px;
+  overflow: hidden;
+}
+
+/* IMAGES */
+
+.about-us__image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--color-white);
+  
+  position: relative;
+}
+
+.about-us__image div {
+  padding: 32px 64px;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-us__image-sushi3 {
+  position: relative;
+
+  border-bottom: 8px solid var(--color-creamson);
+}
+
+.about-us__image-sushi3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-image: url('../../assets/about_bg1.png');
+  background-repeat: no-repeat;
+  background-position: center -20%;
+  background-size: 100%;
+  
+  transform: scale(1);
+  transform-origin: right center;
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.about-us__image-sushi3:hover::before {
+  transform: scale(1.5) translateX(-15%);
+}
+
+
+.about-us__image-sushi2 {
+  position: relative;
+}
+
+.about-us__image-sushi2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-image: url('../../assets/about_bg2.png');
+  background-repeat: no-repeat;
+  background-position: center 120%;
+  background-size: 100%;
+
+  transform: scale(1);
+  transform-origin: right center;
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.about-us__image-sushi2:hover::before {
+  transform: scale(1.5) translateX(-15%);
+}
+
+.about-us__image-sushi3 img {
+  width: 225px;
+  height: 200px;
+  z-index: 2;
+
+  transition: all 0.1s ease-in-out;
+}
+
+.about-us__image-sushi3:hover img {
+  width: 255px;
+  height: 230px;
+
+  transform: translateX(45%);
+}
+
+.about-us__image-sushi2 img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  z-index: 2;
+
+  transition: all 0.1s ease-in-out;
+}
+
+.about-us__image-sushi2:hover img {
+  width: 270px;
+  height: 270px;
+
+  transform: translateX(45%);
+}
+
+/* BUTTON */
+.about-us__button {
+  position: absolute;
+  right: 0;
+  
+  padding: 12px 32px;
+  min-height: 60px;
+
+  border: 0;
+  outline: 0;
+  background-color: var(--secondary-color);
+  border-radius: 30px  0 0 30px;
+
+  font-family: var(--plus-jakarta-sans);
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+
+  cursor: pointer;
+  z-index: 5;
+
+  transition: all 0.2s ease-out;
+}
+
+.about-us__button:hover {
+  background-color: var(--primary-color);
+}
+
+.about-us__button img {
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+/* CONTENT */
+
+.about-us__content {
+  padding: 64px;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} 
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+  .about-us {
+    flex-direction: column;
+  }
+
+  .about-us__image {
+    flex-direction: row;
+  }
+
+  .about-us__image-sushi3 {
+    border-bottom: none;
+    border-right: 8px solid var(--color-creamson);
+  }
+
+  .about-us__button {
+    display: none;
+  }
+
+
+  .about-us__image-sushi3::before {
+    background-position: center;
+  }
+
+  .about-us__image-sushi3:hover::before {
+    transform: none;
+  }
+
+  .about-us__image-sushi2::before {
+    background-position: center;
+  }
+
+  .about-us__image-sushi2:hover::before {
+    transform: none;
+  }
+
+  .about-us__image-sushi3:hover img {
+    width: 225px;
+    height: 200px;
+
+    transform: none;
+  }
+
+  .about-us__image-sushi2:hover img {
+    width: 240px;
+    height: 240px;
+
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .about-us__image {
+    flex-direction: column;
+  }
+
+  .about-us__image-sushi3 {
+    border-right: none;
+    border-bottom: 8px solid var(--color-creamson); 
+  }
+
+  .about-us__button {
+    display: block;
+    top: 42%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .about-us__image-sushi3 img,
+  .about-us__image-sushi2 img {
+    width: 70%;
+    height: 160px;
+    object-fit: contain;
+  }
+
+  .about-us__image-sushi2:hover img,
+  .about-us__image-sushi3:hover img {
+    width: 70%;
+    height: 160px;
+
+    transform: none;
+  }
+
+  .about-us__image div {
+    padding: 52px;
+
+  }
+
+  .about-us__button {
+    top: 46%;
+
+    padding: 6px 24px;
+    font-size: 14px;
+
+    min-height: 45px;
+  }
+
+
+  .about-us__content {
+    padding: 33px;
+  }
+
+  .about-us__content h3 {
+    font-size: 43px;
+  }
+
+  
+
+}

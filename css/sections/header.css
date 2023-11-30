@@ -1,0 +1,118 @@
+.header__nav {
+  display: flex;
+  overflow: hidden;
+}
+
+/* HEADER LOGO */
+
+.header__logo {
+  flex: 1; /* The item will grow and shrink to take up as much space as possible */
+  display: flex;
+
+  position: relative;
+  padding: 20px;
+}
+
+.header__logo-overlay {
+  position: absolute;
+  inset: 0; /* the element is positioned at 0 distance from all four sides of its containing element */
+  width: 100%;
+
+  z-index: -1;
+  background-color: var(--primary-color);
+}
+
+.header__logo a {
+  padding-left: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 0.8;
+  font-family: var(--playfair-display);
+}
+
+/* HEADER MENU */
+
+.header__menu, .header__menu-mobile {
+  padding: 20px;
+  flex: 1.236;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* align items on the right */
+  gap: 64px;
+
+  list-style: none;
+}
+
+.header__menu li {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: var(--plus-jakarta-sans);
+  color: var(--secondary-color);
+
+  transition: all 0.2s ease;
+
+  position: relative;
+  overflow: hidden; /* hide overflow */
+
+  padding: 10px 0;
+}
+
+
+.header__menu li:hover {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+
+.header__menu li::after {
+  content: "";
+  display: block;
+  width: auto;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: all 0.2s ease;
+
+  position: relative;
+  top: 3px; /* move the element down by 3px */
+
+  /*transform: scaleX(0); /* the element is not visible */
+  transform: translate(-100%);
+  
+}
+
+.header__menu li:not(:last-child):hover::after {
+  /*transform: scaleX(1); /* the element is visible */
+  transform: translate(0%);
+}
+
+.header__menu li:last-child:hover {
+  cursor: pointer;
+}
+
+.header__menu-mobile {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 900px) {
+  .header__nav {
+    background: var(--primary-color);
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu-mobile {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__logo {
+    padding-left: 0;
+  }
+}
